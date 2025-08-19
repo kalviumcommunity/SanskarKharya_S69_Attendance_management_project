@@ -1,5 +1,3 @@
-package com.school;
-
 public class Student {
     // Fields
     int id;
