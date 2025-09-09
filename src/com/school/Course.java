@@ -6,7 +6,7 @@ public class Course {
     // Static counter for auto-ID generation
     private static int nextCourseIdCounter = 101;
 
-    // Fields
+    // Fields (encapsulated: private)
     private int courseId;
     private String courseName;
     private int credits;
@@ -16,6 +16,20 @@ public class Course {
         this.courseId = nextCourseIdCounter++;
         this.courseName = courseName;
         this.credits = credits;
+    }
+
+    // Getters (Encapsulation: only getters are public)
+    public int getCourseId() {
+        return courseId;
+    }
+
+    public String getCourseName() {
+        return courseName;
+    }
+
+    // Optional: getter for credits if needed later
+    public int getCredits() {
+        return credits;
     }
 
     // Method to display course details
