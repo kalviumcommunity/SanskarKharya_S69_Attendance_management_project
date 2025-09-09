@@ -2,6 +2,9 @@
 
 package com.school;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
         // Create array of students using auto-generated IDs
@@ -25,6 +28,24 @@ public class Main {
         System.out.println("---- Courses ----");
         for (Course course : courses) {
             course.displayCourse();
+        }
+
+        // Attendance records log
+        List<AttendanceRecord> attendanceLog = new ArrayList<>();
+
+        // Add attendance records (valid + invalid)
+        AttendanceRecord record1 = new AttendanceRecord(students[0].getStudentId(), courses[0].getCourseId(), "Present");
+        AttendanceRecord record2 = new AttendanceRecord(students[1].getStudentId(), courses[1].getCourseId(), "Absent");
+        AttendanceRecord record3 = new AttendanceRecord(students[2].getStudentId(), courses[0].getCourseId(), "Late"); // Invalid
+
+        attendanceLog.add(record1);
+        attendanceLog.add(record2);
+        attendanceLog.add(record3);
+
+        // Display attendance records
+        System.out.println("---- Attendance Records ----");
+        for (AttendanceRecord record : attendanceLog) {
+            record.displayRecord();
         }
     }
 }
